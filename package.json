@@ -1,6 +1,6 @@
 {
   "name": "include-file-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Plugin to include files in html templates",
   "main": "index.js",
   "scripts": {
