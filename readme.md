@@ -6,10 +6,10 @@ Use `@@include('path_to_file')` to place here content of file.
 ## Using with webpack
 
 ```js
-const IncludeReplaceWebpackPlugin = require('include-replace-webpack-plugin');
+const IncludeFileWebpackPlugin = require('include-file-webpack-plugin');
 
 plugins: [
-    new IncludeReplaceWebpackPlugin({
+    new IncludeFileWebpackPlugin({
         directory: './public/', //path to directory with files
         input: 'input.html',
         output: 'output.html',
