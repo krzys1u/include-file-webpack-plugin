@@ -6,6 +6,7 @@ class IncludeFileWebpackPlugin {
         this.input = config.input;
         this.output = config.output;
         this.directory = config.directory;
+        this.processIncludeContents = config.processIncludeContents;
 
         this.inputPath = this.directory + this.input;
         this.outputPath = this.directory + this.output;
@@ -27,6 +28,10 @@ class IncludeFileWebpackPlugin {
                 to = match[1],
                 includedFile = this.directory + to.replace('./',''),
                 fileContent = fs.readFileSync(includedFile);
+
+            if (this.processFn) {
+                fileContent = this.processIncludeContents(fileContent.toString());
+            }
 
             replacementData.push({
                 from: from,
