@@ -29,7 +29,7 @@ class IncludeFileWebpackPlugin {
                 includedFile = this.directory + to.replace('./',''),
                 fileContent = fs.readFileSync(includedFile);
 
-            if (this.processFn) {
+            if (this.processIncludeContents) {
                 fileContent = this.processIncludeContents(fileContent.toString());
             }
 
